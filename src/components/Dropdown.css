@@ -15,18 +15,12 @@ ul{
 }
 
 ul li{
-    padding: 10px;
+    padding: 15px 35px 15px 15px;
     cursor: pointer;
 }
 ul li:hover{
     background-color: #e7e7e7;
 }
-
-ul li .selected .fa{
-    font-size: 8px;
-    color: purple;
-}
-
 .fa .fa-filter{
     font-size: 20px;
     padding: 10px;
