@@ -1,0 +1,29 @@
+.list{
+    width: 100%;
+    border-collapse: collapse;
+}
+thead{
+    background-color: #e2e2e2;
+}
+
+thead th{
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight:500;
+    color: #696969;
+    text-align: left;
+    padding: 5px 20px;
+}
+
+tbody td{
+    font-size: 14px;
+    font-weight:500;
+    padding: 20px;
+}
+
+hr{
+    border: none;
+    background-color: #cdcdcd;
+    height: 1px;
+    margin: 0;
+}

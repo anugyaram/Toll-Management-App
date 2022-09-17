@@ -4,25 +4,27 @@ function List(){
 
     return(
         <div>
-            <div className='list-header'>
-                <ul>
-                    <li>Vehicle Type</li>
-                    <li>Vehicle Number</li>
-                    <li>Date/Time</li>
-                    <li>Toll Number</li>
-                    <li>Tariff</li>
-                </ul>
-            </div>
-            <div className='list-content'>
-                <ul>
-                    <li>Vehicle Type</li>
-                    <li>Vehicle Number</li>
-                    <li>Date/Time</li>
-                    <li>Toll Number</li>
-                    <li>Tariff</li>
-                </ul>
-                <hr/>
-        </div>
+            <table className='list'>
+                <thead>
+                    <tr>
+                        <th>Vehicle Type</th>
+                        <th>Vehicle Number</th>
+                        <th>Date/Time</th>
+                        <th>Toll Number</th>
+                        <th>Tariff</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vehicle Type</td>
+                        <td>Vehicle Number</td>
+                        <td>Date/Time</td>
+                        <td>Toll Number</td>
+                        <td>Tariff</td>
+                    </tr>
+                </tbody>
+        </table>
+        <hr/>
     </div>
     )
 }
