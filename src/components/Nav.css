@@ -1,10 +1,26 @@
 .nav{
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
-.nav .fa{
+.objects .fa{
     font-size: 20px;
     padding: 10px;
     color: #a09f9f;
+}
+
+.objects{
+    display: flex;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.button{
+    margin: 0px 10px;
 }
