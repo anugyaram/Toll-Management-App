@@ -1,0 +1,10 @@
+.nav{
+    display: flex;
+    align-items: center;
+}
+
+.nav .fa{
+    font-size: 20px;
+    padding: 10px;
+    color: #a09f9f;
+}
