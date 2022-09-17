@@ -1,0 +1,39 @@
+.dropdown{
+    border: 1px solid #c7c6c6;
+    position: absolute;
+    top: 115px;
+    z-index: 2;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li{
+    padding: 10px;
+    cursor: pointer;
+}
+ul li:hover{
+    background-color: #e7e7e7;
+}
+
+ul li .selected .fa{
+    font-size: 8px;
+    color: purple;
+}
+
+.fa .fa-filter{
+    font-size: 20px;
+    padding: 10px;
+    color: #a09f9f;
+    cursor: pointer;
+}
+
+.show{
+    display: block;
+}

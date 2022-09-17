@@ -3,16 +3,16 @@
     align-items: center;
     justify-content: space-between;
 }
+.objects{
+    display: flex;
+    align-items: center;
+}
 
 .objects .fa{
     font-size: 20px;
     padding: 10px;
     color: #a09f9f;
-}
-
-.objects{
-    display: flex;
-    align-items: center;
+    cursor: pointer;
 }
 
 .buttons{
@@ -24,3 +24,4 @@
 .button{
     margin: 0px 10px;
 }
+

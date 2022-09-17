@@ -1,6 +1,8 @@
 import './Nav.css';
 import Search from './SearchBar';
 import Button from './Button';
+import Dropdown from './Dropdown';
+
 
 function Nav(){
     return(
@@ -9,7 +11,9 @@ function Nav(){
                 <div>
                     <p>Toll entries/Vehicle entries</p>
                 </div>
-                <div><i className='fa fa-filter'></i></div>
+                <div>
+                    <Dropdown/>
+                </div>
                 <div>
                     <Search/>
                 </div>
@@ -27,7 +31,8 @@ function Nav(){
             </div>
         </div>
 
-    )
+    );
 }
+
 
 export default Nav;
