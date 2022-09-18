@@ -1,0 +1,18 @@
+.new-entry{
+    background-color: #fff;
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+}
+
+#add-btn-entry{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.v-type{
+    width: 100%;
+}

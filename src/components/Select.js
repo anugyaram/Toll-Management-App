@@ -1,9 +1,9 @@
 import './Select.css';
 
-function Select({className}){
+function Select({className,require}){
     return(
         <div className={className}>
-            <select name='vehicle-type'>
+            <select name='vehicle-type' required={require}>
                 <option value="" disabled selected hidden>Select vehicle type</option>
                 <option value='Car/Jeep/Van'>Car/Jeep/Van</option>
                 <option value='LCV'>LCV</option>

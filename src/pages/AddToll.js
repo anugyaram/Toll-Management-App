@@ -10,18 +10,13 @@ function AddToll(){
             
             <div className='form'>
                 <label>Toll Name <span className='star'>*</span></label>
-                <Input placeholder={'Enter toll name'} className={'name'} id={'name'} required />
+                <Input placeholder={'Enter toll name'} className={'name'} id={'name'}  />
 
                 <label>Vehicle Fare Details <span className='star'>*</span></label>
                 <div className='type'>
                     <Select className={'select'} />
-                    <Input placeholder={'Single Journey'} type={'number'} className={'input'}/>
-                    <Input placeholder={'Return Journey'} type={'number'} className={'input'}/>
-                </div>
-                <div className='type'>
-                    < Select className={'select'} />
-                    <Input placeholder={'Single Journey'} type={'number'} className={'input'}/>
-                    <Input placeholder={'Return Journey'} type={'number'} className={'input'}/>                    
+                    <Input placeholder={'Single Journey'} type={'number'} className={'input'} />
+                    <Input placeholder={'Return Journey'} type={'number'} className={'input'} />
                 </div>
                 <div className='type'>
                     < Select className={'select'} />
@@ -30,10 +25,15 @@ function AddToll(){
                 </div>
                 <div className='type'>
                     < Select className={'select'} />
-                    <Input placeholder={'Single Journey'} type={'number'} className={'input'}/>
-                    <Input placeholder={'Return Journey'} type={'number'} className={'input'}/>                   
+                    <Input placeholder={'Single Journey'} type={'number'} className={'input'} />
+                    <Input placeholder={'Return Journey'} type={'number'} className={'input'} />                    
                 </div>
-                <Button id={'add-btn'}> Add details </Button>
+                <div className='type'>
+                    < Select className={'select'} />
+                    <Input placeholder={'Single Journey'} type={'number'} className={'input'} />
+                    <Input placeholder={'Return Journey'} type={'number'} className={'input'} />                   
+                </div>
+                <Button id={'add-btn'} > Add details </Button>
             </div>    
         </div>
     )

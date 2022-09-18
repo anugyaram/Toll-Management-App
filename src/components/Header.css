@@ -37,7 +37,7 @@
     margin: 0px 10px;
 }
 
-.show-toll{
+.show-toll, .vehicle-entry{
     display: none;
     position: fixed;
     z-index: 1;
