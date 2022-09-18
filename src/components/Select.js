@@ -1,10 +1,9 @@
 import './Select.css';
 
-function Select({size}){
-    let w = ""
+function Select({className}){
     return(
-        <div>
-            <select name='vehicle-type' style={{width: w}}>
+        <div className={className}>
+            <select name='vehicle-type'>
                 <option value="" disabled selected hidden>Select vehicle type</option>
                 <option value='Car/Jeep/Van'>Car/Jeep/Van</option>
                 <option value='LCV'>LCV</option>
@@ -14,17 +13,6 @@ function Select({size}){
         </div>
     )
 
-    // switch(size){
-    //     case "small":
-    //         w = "30%";
-    //         break;
-    //     case "large":
-    //         w = "700px";
-    //         break;
-    //     default:
-    //         w = "33%";
-    //         break;
-    // }
 }
 
 export default Select;

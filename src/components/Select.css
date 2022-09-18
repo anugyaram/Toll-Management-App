@@ -3,6 +3,7 @@ select{
     border: 1px solid #d5d5d5;
     font-size: 15px;
     font-weight: 500;
+    width: 100%;
 }
 select:focus{
     outline: none;

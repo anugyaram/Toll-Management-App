@@ -1,0 +1,46 @@
+h3{
+    text-align: center;
+}
+.close{
+    padding-right: 30px;
+    float: right;
+    cursor: pointer;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+}
+.form label{
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 0px;
+}
+.form .star{
+    color: red;
+}
+
+.form .name{
+    width: 100%;
+}
+
+.type{
+    display: flex;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+.select{
+    width: 33%;
+    padding-right: 20px;
+}
+
+.input{
+    padding-right: 20px;
+    width: 33%;
+}
+
+#add-btn{
+    width: 99%;
+    height: 30px;
+}

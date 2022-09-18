@@ -2,6 +2,7 @@
     font-size: 15px;
     padding: 10px;
     border: 1px solid #d5d5d5;
+    width: 98%;
 }
 
 .custom-input:focus{
