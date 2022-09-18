@@ -2,6 +2,7 @@ import './Header.css';
 import Search from './SearchBar';
 import Button from './Button';
 import Dropdown from './Dropdown';
+import AddToll from '../pages/AddToll';
 
 function Header(){
     return(
@@ -24,7 +25,7 @@ function Header(){
                     <div className='button'>
                         <Button >Add vehicle entry</Button>
                     </div>
-                    <div className='button'>
+                    <div className='button' onClick={showTollEle}>
                         <Button>Add new toll</Button>
                     </div>
                     <div className='button'>
@@ -32,10 +33,20 @@ function Header(){
                     </div>
                 </div>
             </div>
+            <div className='show-toll'>
+                <AddToll />
+            </div>
         </div>
     )
 }
 
-//let openVehicleEntry = () => 
+let modal = document.querySelector('.show-toll');
 
+let showTollEle = () => document.querySelector('.show-toll').style.display = "block";
+
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
 export default Header;

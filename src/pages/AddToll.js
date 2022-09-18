@@ -3,15 +3,14 @@ import Select from '../components/Select';
 import Input from '../components/Input';
 import Button from '../components/Button';
 
-function AddToll({className}){
+function AddToll(){
     return(
-        <div className={className}>
-            <span class="close">&times;</span>
+        <div className='add-toll'>
             <h3>Add new Toll</h3>
             
             <div className='form'>
                 <label>Toll Name <span className='star'>*</span></label>
-                <Input placeholder={'Enter toll name'} className={'name'} id={'name'} />
+                <Input placeholder={'Enter toll name'} className={'name'} id={'name'} required />
 
                 <label>Vehicle Fare Details <span className='star'>*</span></label>
                 <div className='type'>
@@ -39,5 +38,6 @@ function AddToll({className}){
         </div>
     )
 }
+
 
 export default AddToll;

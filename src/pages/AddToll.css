@@ -1,3 +1,12 @@
+.add-toll{
+    background-color: #fff;
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+
 h3{
     text-align: center;
 }
@@ -42,5 +51,6 @@ h3{
 
 #add-btn{
     width: 99%;
-    height: 30px;
+    height: 40px;
+    margin-top: 10px;
 }
