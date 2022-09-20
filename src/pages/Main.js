@@ -6,11 +6,18 @@ import AddToll from './AddToll';
 import NewEntry from './NewEntry';
 import List from '../components/List';
 
-//import { useState } from 'react';
+import { useState } from 'react';
 
 import './Main.css';
 
 function Main(){
+
+    const [openModal, setOpenModal] = useState(false);
+
+    const handleOpenModal = () => {
+        setOpenModal(!openModal);
+        console.log("open")
+    }
 
     return (
         <div className="Main">
@@ -32,15 +39,15 @@ function Main(){
                         <Button onClick={vehicleEntryEle}>Add vehicle entry</Button>
                     </div>
                     <div className='button' >
-                        <Button onClick={showTollEle}>Add new toll</Button>
+                        <Button onClick={handleOpenModal}>Add new toll</Button>
                     </div>
                     <div className='button'>
                         <Button>View all tolls</Button>
                     </div>
                 </div>
             </div>
-            <div className='show-toll'>
-                <AddToll />
+            <div >
+            {openModal &&<AddToll toggleModal={handleOpenModal}/>}
             </div>
             <div className='vehicle-entry'>
                 <NewEntry />
@@ -53,7 +60,7 @@ function Main(){
 let modal1 = document.querySelector('.show-toll');
 let modal2 = document.querySelector('.vehicle-entry');
 
-let showTollEle = () => document.querySelector('.show-toll').style.display = "block";
+//let showTollEle = () => document.querySelector('.show-toll').style.display = "block";
 let vehicleEntryEle = () => document.querySelector('.vehicle-entry').style.display = "block";
 
 window.onclick = (event) => {

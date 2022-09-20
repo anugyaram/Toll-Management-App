@@ -5,7 +5,7 @@ import Button from '../components/Button';
 
 import { useState } from 'react';
 
-function AddToll(){
+function AddToll({toggleModal}){
 
     const [tollName, setTollName] = useState('');
 
@@ -67,16 +67,27 @@ function AddToll(){
 
         localStorage.setItem('tollList', JSON.stringify(data));
 
-        document.querySelector('.add-toll').classList.add('show')
+        toggleIt();
     }; 
 
+    const [isOpen, setIsOpen] = useState(true);
+    let toggleIt = () => {
+        setIsOpen(false);
+        toggleModal();
+    }
+
+
     return(
+        <div id="show-toll" onClose={() => setIsOpen(false)}
+        onOpen={() => setIsOpen(true)}
+        open={isOpen}>
         <div className='add-toll'>
+            <span onClick={toggleIt} className='close'>&times;</span>
             <h3>Add new Toll</h3>
             
             <div className='form'>
                 <label>Toll Name <span className='star'>*</span></label>
-                <Input placeholder={'Enter toll name'} className={'name'} id={'name'}
+                <Input placeholder={'Enter toll name'} className={'name'} required={true}
                 onChange={(e) => setTollName(e.target.value)} 
                 />
 
@@ -103,6 +114,7 @@ function AddToll(){
                 </div>
                 <Button id={'add-btn'} onClick={handle}> Add details </Button>
             </div>    
+        </div>
         </div>
     )
 
