@@ -6,9 +6,12 @@ import AddToll from './AddToll';
 import NewEntry from './NewEntry';
 import List from '../components/List';
 
+//import { useState } from 'react';
+
 import './Main.css';
 
 function Main(){
+
     return (
         <div className="Main">
           <Header />
@@ -53,12 +56,13 @@ let modal2 = document.querySelector('.vehicle-entry');
 let showTollEle = () => document.querySelector('.show-toll').style.display = "block";
 let vehicleEntryEle = () => document.querySelector('.vehicle-entry').style.display = "block";
 
-window.onclick = function(event) {
+window.onclick = (event) => {
     if (event.target === modal1) {
-        modal1.style.display = "none";
+        document.querySelector('.show-toll').style.display = "none";
+        
     }
     if(event.target === modal2){
-        modal2.style.display = "none";
+        document.querySelector('.vehicle-entry').style.display = "none";
     }
 }
 

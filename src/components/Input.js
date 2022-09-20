@@ -1,6 +1,6 @@
 import './Input.css';
 
-function Input({placeholder, type,id,className, disabled,required}){
+function Input({placeholder, type,id,className,onChange, disabled,required}){
     let inputType = "";
 
     // Type...
@@ -18,7 +18,14 @@ function Input({placeholder, type,id,className, disabled,required}){
 
     return(
         <div className={className}>
-            <input className="custom-input" placeholder={placeholder} type={inputType} id={id} disabled={disabled} required={required} />
+            <input className="custom-input" 
+            placeholder={placeholder} 
+            type={inputType} 
+            id={id} 
+            onChange={onChange}
+            disabled={disabled} 
+            required={required}
+             />
         </div>
     )
 }

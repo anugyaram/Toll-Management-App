@@ -1,8 +1,8 @@
 import './Select.css';
 
-function Select({className,require}){
+function Select({className,require,onChange}){
     return(
-        <div className={className}>
+        <div className={className} onChange={onChange}>
             <select name='vehicle-type' required={require}>
                 <option value="" disabled selected hidden>Select vehicle type</option>
                 <option value='Car/Jeep/Van'>Car/Jeep/Van</option>

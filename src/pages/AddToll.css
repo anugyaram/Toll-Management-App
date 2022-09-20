@@ -54,3 +54,7 @@ h3{
     height: 40px;
     margin-top: 10px;
 }
+
+.show{
+    display: none;
+}
