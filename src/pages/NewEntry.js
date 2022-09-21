@@ -13,6 +13,7 @@ function NewEntry({toggleModal}){
     const [type,setType] = useState('');
     const [id,setId] = useState('')
     const [t,setTariff] = useState('')
+    const [time,setTime] = useState('')
 
     let tollName,optionText, optionValue,tariff
 
@@ -24,7 +25,8 @@ function NewEntry({toggleModal}){
         tollName:tollName,
         type: type,
         vNumber: id,
-        tariff: t
+        tariff: t,
+        currTime: time
     };
 
     const options = []
@@ -48,7 +50,6 @@ function NewEntry({toggleModal}){
                 //console.log(data[i][j])
             }
         }
-        console.log(tariff)
     }
     getData(data);
 
@@ -56,7 +57,9 @@ function NewEntry({toggleModal}){
         setId(e.target.value)
 
         setTariff(tariff)
+        setTime(getTime())
     }
+
     
     let handle = () => {        
         let data = localStorage.getItem('entries');
@@ -74,6 +77,7 @@ function NewEntry({toggleModal}){
         setIsOpen(false);
         toggleModal();
     }   
+
 
     return(
         <div className='show' onClose={() => setIsOpen(false)}
@@ -106,6 +110,19 @@ function NewEntry({toggleModal}){
             </div>
         </div>
     )
+}
+
+function getTime(){
+    let currentDate = new Date();
+
+    let currentDayOfMonth = currentDate.getDate();
+    let currentMonth = currentDate.getMonth();
+    let currentYear = currentDate.getFullYear();
+    let currentHour = currentDate.getHours();
+    let currentMin = currentDate.getMinutes();
+
+    let dateString = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear+ " "+currentHour+":"+currentMin;
+    return dateString
 }
 
 export default NewEntry;

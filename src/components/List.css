@@ -21,9 +21,6 @@ tbody td{
     padding: 20px;
 }
 
-hr{
-    border: none;
-    background-color: #cdcdcd;
-    height: 1px;
-    margin: 0;
+.row{
+    border-bottom: 1px solid #cdcdcd;
 }
