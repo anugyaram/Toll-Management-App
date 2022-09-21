@@ -12,10 +12,16 @@ import './Main.css';
 
 function Main(){
 
-    const [openModal, setOpenModal] = useState(false);
+    const [openModal1, setOpenModal1] = useState(false);
+    const [openModal2, setOpenModal2] = useState(false);
 
-    const handleOpenModal = () => {
-        setOpenModal(!openModal);
+    const handleOpenModal1 = () => {
+        setOpenModal1(!openModal1);
+        console.log("open")
+    }
+
+    const handleOpenModal2 = () => {
+        setOpenModal2(!openModal2);
         console.log("open")
     }
 
@@ -36,10 +42,10 @@ function Main(){
                 </div>
                 <div className='buttons'>
                     <div className='button' >
-                        <Button onClick={vehicleEntryEle}>Add vehicle entry</Button>
+                        <Button onClick={handleOpenModal2}>Add vehicle entry</Button>
                     </div>
                     <div className='button' >
-                        <Button onClick={handleOpenModal}>Add new toll</Button>
+                        <Button onClick={handleOpenModal1}>Add new toll</Button>
                     </div>
                     <div className='button'>
                         <Button>View all tolls</Button>
@@ -47,31 +53,31 @@ function Main(){
                 </div>
             </div>
             <div >
-            {openModal &&<AddToll toggleModal={handleOpenModal}/>}
+            {openModal1 &&<AddToll toggleModal={handleOpenModal1}/>}
             </div>
-            <div className='vehicle-entry'>
-                <NewEntry />
+            <div >
+            {openModal2 &&<NewEntry toggleModal={handleOpenModal2} />}
             </div>
           <List/>
         </div>
       );
 }
 
-let modal1 = document.querySelector('.show-toll');
-let modal2 = document.querySelector('.vehicle-entry');
+// let modal1 = document.querySelector('.show-toll');
+// let modal2 = document.querySelector('.vehicle-entry');
 
-//let showTollEle = () => document.querySelector('.show-toll').style.display = "block";
-let vehicleEntryEle = () => document.querySelector('.vehicle-entry').style.display = "block";
+// //let showTollEle = () => document.querySelector('.show-toll').style.display = "block";
+// let vehicleEntryEle = () => document.querySelector('.vehicle-entry').style.display = "block";
 
-window.onclick = (event) => {
-    if (event.target === modal1) {
-        document.querySelector('.show-toll').style.display = "none";
+// window.onclick = (event) => {
+//     if (event.target === modal1) {
+//         document.querySelector('.show-toll').style.display = "none";
         
-    }
-    if(event.target === modal2){
-        document.querySelector('.vehicle-entry').style.display = "none";
-    }
-}
+//     }
+//     if(event.target === modal2){
+//         document.querySelector('.vehicle-entry').style.display = "none";
+//     }
+// }
 
 export default Main;
 
