@@ -5,7 +5,6 @@ function List(){
 
     let data = JSON.parse(localStorage.getItem('entries'))
 
-    console.log(data)
 
     return(
         <div>

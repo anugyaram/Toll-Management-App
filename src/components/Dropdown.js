@@ -1,20 +1,31 @@
 import './Dropdown.css';
 
 function Dropdown(){
+
+    let data = JSON.parse(localStorage.getItem('entries'))
+
+    let unique = [...new Set(data.map((entry) =>(
+        entry.tollName
+    )))]
+        console.log(unique)
     return(
         <div>
-            <i className='fa fa-filter' onClick={openDropdown}></i>
-            <div className='dropdown'>
+            <div>
+                <i className='fa fa-filter' onClick={openDropdown}></i>
+            </div>
+            <div className='drop-down'>
                 <ul>
                     <li className='selected'>All</li>
-                    <li>Chengalpattu</li>
+                    {unique.map((entry) => (  
+                        <li>{entry}</li>
+                    ))}
                 </ul>
             </div>
         </div>
     )
 }
 
-let openDropdown = () => document.querySelector('.dropdown').classList.toggle("show")
+let openDropdown = () => document.querySelector('.drop-down').classList.toggle("visible")
 
 
 
