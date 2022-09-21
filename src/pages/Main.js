@@ -17,12 +17,12 @@ function Main(){
 
     const handleOpenModal1 = () => {
         setOpenModal1(!openModal1);
-        console.log("open")
+
     }
 
     const handleOpenModal2 = () => {
         setOpenModal2(!openModal2);
-        console.log("open")
+
     }
 
     return (
