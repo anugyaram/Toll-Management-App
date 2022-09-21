@@ -1,5 +1,4 @@
 import './List.css';
-import { useState } from 'react';
 
 function List({data}){
 

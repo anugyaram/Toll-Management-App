@@ -32,8 +32,22 @@ function Main(){
         let newFilter = data.filter((value) =>{
             return value.vNumber.toLowerCase().includes(word.toLowerCase());
         });
-
+        //console.log(word)
         setFilter(newFilter);
+    }
+
+    const handleOption = (e) => {
+        let option = e.target.value;
+        let newOption = data.filter((value) => {
+            return value.tollName.includes(option);
+        });
+
+        if(option === "All"){
+            setFilter(data)
+        }else{
+            setFilter(newOption);
+        }
+        
     }
 
     return (
@@ -45,7 +59,7 @@ function Main(){
                         <p>Toll entries/Vehicle entries</p>
                     </div>
                     <div>
-                        <Dropdown/>
+                        <Dropdown onChange={handleOption}/>
                     </div>
                     <div>
                         <Search onChange={handleFilter}/>

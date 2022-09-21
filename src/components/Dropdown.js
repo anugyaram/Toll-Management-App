@@ -1,25 +1,25 @@
 import './Dropdown.css';
 
-function Dropdown(){
+function Dropdown({onChange}){
 
     let data = JSON.parse(localStorage.getItem('entries'))
 
     let unique = [...new Set(data.map((entry) =>(
         entry.tollName
     )))]
-        console.log(unique)
+        //console.log(unique)
     return(
         <div>
             <div>
                 <i className='fa fa-filter' onClick={openDropdown}></i>
             </div>
             <div className='drop-down'>
-                <ul>
-                    <li className='selected'>All</li>
+                <select onChange={onChange}>
+                    <option className='selected'>All</option>
                     {unique.map((entry) => (  
-                        <li>{entry}</li>
+                        <option>{entry}</option>
                     ))}
-                </ul>
+                </select>
             </div>
         </div>
     )
