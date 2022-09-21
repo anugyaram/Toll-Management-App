@@ -1,9 +1,9 @@
 import './List.css';
+import { useState } from 'react';
 
-function List(){
-    
+function List({data}){
 
-    let data = JSON.parse(localStorage.getItem('entries'))
+    //let data = JSON.parse(localStorage.getItem('entries'))
 
 
     return(
@@ -18,6 +18,7 @@ function List(){
                         <th>Tariff</th>
                     </tr>
                 </thead>
+                {data.length !== 0 &&(
                 <tbody>
                     {data.map((entry) => (
                     <tr className='row'>
@@ -29,6 +30,7 @@ function List(){
                     </tr>
                 ))}
                 </tbody>
+                )}
         </table>
     </div>
     )

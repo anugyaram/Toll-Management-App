@@ -11,6 +11,8 @@ import { useState } from 'react';
 import './Main.css';
 
 function Main(){
+    let data = JSON.parse(localStorage.getItem('entries'))
+    const [filterData, setFilter] = useState(data)
 
     const [openModal1, setOpenModal1] = useState(false);
     const [openModal2, setOpenModal2] = useState(false);
@@ -25,6 +27,15 @@ function Main(){
 
     }
 
+    const handleFilter = (e) => {
+        let word = e.target.value;
+        let newFilter = data.filter((value) =>{
+            return value.vNumber.toLowerCase().includes(word.toLowerCase());
+        });
+
+        setFilter(newFilter);
+    }
+
     return (
         <div className="Main">
           <Header />
@@ -37,7 +48,7 @@ function Main(){
                         <Dropdown/>
                     </div>
                     <div>
-                        <Search/>
+                        <Search onChange={handleFilter}/>
                     </div>
                 </div>
                 <div className='buttons'>
@@ -58,10 +69,13 @@ function Main(){
             <div >
             {openModal2 &&<NewEntry toggleModal={handleOpenModal2} />}
             </div>
-          <List/>
+          <List data={filterData} />
         </div>
       );
+   
 }
+
+
 
 // let modal1 = document.querySelector('.show-toll');
 // let modal2 = document.querySelector('.vehicle-entry');
