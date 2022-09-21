@@ -1,0 +1,43 @@
+
+    let data = JSON.parse(localStorage.getItem('tollList'))
+    //console.log(data)
+    let optionText, optionValue
+
+    // const iterate = (data) => {
+    //     Object.keys(data).forEach(key => {
+
+    //     if (typeof data[key] === 'object'  && data[key] !== null) {
+    //             iterate(data[key])
+                
+    //         }
+    //         else{
+    //             if(key === 'tollName'){
+    //                 optionText = `${data[key]}`
+    //                 optionValue = `${key}`
+    //                 console.log(optionText,optionValue)
+                    
+    //                 //console.log(`value: ${data[key]}`)
+    //                 //document.querySelector('.toll-name').append(new Option(optionText, optionValue))
+    //             }
+    //             //console.log(`key: ${key}, value: ${data[key]}`)
+    //         }
+    //     })
+    // }
+    //console.log(iterate(data))
+    //iterate(data)
+
+    const options = []
+
+    function getData(data){
+        for(let i=0;i<data.length;i++){
+            console.log(data[i])
+            // console.log(data[i].tollName)
+
+            optionText = data[i].tollName
+            optionValue = i
+            //console.log(optionText,optionValue)
+            options.push({optionValue,optionText})
+        }
+
+    }
+    getData(data);

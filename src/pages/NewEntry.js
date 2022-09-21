@@ -8,47 +8,66 @@ import { useState } from 'react';
 function NewEntry({toggleModal}){
 
     let data = JSON.parse(localStorage.getItem('tollList'))
-    //console.log(data)
-    let optionText, optionValue,val
 
-    // const iterate = (data) => {
-    //     Object.keys(data).forEach(key => {
+    const [val,setValue] = useState('');
+    const [type,setType] = useState('');
+    const [id,setId] = useState('')
+    const [t,setTariff] = useState('')
 
-    //     if (typeof data[key] === 'object'  && data[key] !== null) {
-    //             iterate(data[key])
-                
-    //         }
-    //         else{
-    //             if(key === 'tollName'){
-    //                 optionText = `${data[key]}`
-    //                 optionValue = `${key}`
-    //                 console.log(optionText,optionValue)
-                    
-    //                 //console.log(`value: ${data[key]}`)
-    //                 //document.querySelector('.toll-name').append(new Option(optionText, optionValue))
-    //             }
-    //             //console.log(`key: ${key}, value: ${data[key]}`)
-    //         }
-    //     })
-    // }
-    //console.log(iterate(data))
-    //iterate(data)
+    let tollName,optionText, optionValue,tariff
+
+    for(let j=parseInt(val);j<=parseInt(val);j++){
+        tollName = data[j].tollName
+    }
+
+    let entries = {
+        tollName:tollName,
+        type: type,
+        vNumber: id,
+        tariff: t
+    };
 
     const options = []
 
     function getData(data){
         for(let i=0;i<data.length;i++){
-            // console.log(data[i])
-            // console.log(data[i].tollName)
-
+            //console.log(data[i])
+            //console.log(data[i].tollName)
             optionText = data[i].tollName
             optionValue = i
-            //console.log(optionText,optionValue)
             options.push({optionValue,optionText})
+            
+        } 
+
+
+        for(let i=parseInt(val);i<=parseInt(val);i++){
+            for(let j=0;j<4;j++){
+                if(data[i][j].type === type){
+                    tariff = data[i][j].s
+                }
+                //console.log(data[i][j])
+            }
         }
+        console.log(tariff)
     }
     getData(data);
-    console.log(options)
+
+    let vehicleNo = (e) => {
+        setId(e.target.value)
+
+        setTariff(tariff)
+    }
+    
+    let handle = () => {        
+        let data = localStorage.getItem('entries');
+        data = data ? JSON.parse(data) : [];
+        data.push(entries);
+
+        localStorage.setItem('entries', JSON.stringify(data));
+
+        toggleIt();
+    };
+
 
     const [isOpen, setIsOpen] = useState(true);
     let toggleIt = () => {
@@ -66,23 +85,23 @@ function NewEntry({toggleModal}){
 
             <div className='form'>
             <label>Select Toll Name <span className='star'>*</span></label>
-            <select name='toll-name'>
+            <select className='toll-name'onChange={(e) => setValue(e.target.value)}>
                 <option value="" disabled selected hidden>Select toll name</option>
                 {options.map((option) => (
-                    <option value={option.optionValue}>{option.optionText}</option>
+                    <option value={option.optionValue} >{option.optionText}</option>
                 ))}
             </select>
 
             <label>Select Vehicle Type <span className='star'>*</span></label>
-            <Select className={'v-type'}  />
+            <Select className={'v-type'} onChange={(e) => setType(e.target.value)} />
 
             <label>Vehicle Number <span className='star'>*</span></label>
-            <Input type={'number'} placeholder={'Enter your login Id'} />
+            <Input placeholder={'Enter your login Id'} onChange={vehicleNo} />
 
             <label>Tariff</label>
-            <Input placeholder={'Tariff amount'} disabled = {true} />
+            <Input placeholder={'Tariff amount'} disabled = {true} value={tariff} />
 
-            <Button id={'add-btn-entry'} onClick={toggleIt}> Add entry </Button>
+            <Button id={'add-btn-entry'} onClick={handle}> Add entry </Button>
             </div>
             </div>
         </div>
