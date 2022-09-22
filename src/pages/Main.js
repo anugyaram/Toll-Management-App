@@ -7,10 +7,13 @@ import NewEntry from './NewEntry';
 import List from '../components/List';
 
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 import './Main.css';
 
 function Main(){
+    const navigate = useNavigate();
+
     let data = JSON.parse(localStorage.getItem('entries'))
     const [filterData, setFilter] = useState(data)
 
@@ -49,7 +52,7 @@ function Main(){
         }
         
     }
-
+    //onClick={() => navigate("/view", { from: "Main" })}
     return (
         <div className="Main">
           <Header />
@@ -73,7 +76,7 @@ function Main(){
                         <Button onClick={handleOpenModal1}>Add new toll</Button>
                     </div>
                     <div className='button'>
-                        <Button>View all tolls</Button>
+                        <Button onClick={() => navigate("/View")}>View all tolls</Button>
                     </div>
                 </div>
             </div>
