@@ -65,7 +65,7 @@ function Main(){
                         <Dropdown onChange={handleOption}/>
                     </div>
                     <div>
-                        <Search onChange={handleFilter}/>
+                        <Search placeholder={'Search vehicle'} onChange={handleFilter}/>
                     </div>
                 </div>
                 <div className='buttons'>
@@ -81,10 +81,10 @@ function Main(){
                 </div>
             </div>
             <div >
-            {openModal1 &&<AddToll toggleModal={handleOpenModal1}/>}
+                {openModal1 &&<AddToll toggleModal={handleOpenModal1}/>}
             </div>
             <div >
-            {openModal2 &&<NewEntry toggleModal={handleOpenModal2} />}
+                {openModal2 &&<NewEntry toggleModal={handleOpenModal2} />}
             </div>
           <List data={filterData} />
         </div>

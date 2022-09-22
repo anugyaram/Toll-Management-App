@@ -1,0 +1,32 @@
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.objects{
+    display: flex;
+    align-items: center;
+}
+
+.objects p{
+    padding: 0px 20px;
+    font-size: 18px;
+    font-weight:500;
+}
+
+.objects .fa{
+    font-size: 20px;
+    padding: 10px;
+    color: #a09f9f;
+    cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.button{
+    margin: 0px 10px;
+}
